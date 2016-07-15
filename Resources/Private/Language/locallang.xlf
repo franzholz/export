@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="export">
+		<header/>
+		<body>
+			<trans-unit id="exportTask.name">
+				<source>Export task</source>
+			</trans-unit>
+			<trans-unit id="exportTask.description">
+				<source>The export task reads various database tables and writes them into CSV files.</source>
+			</trans-unit>
+			<trans-unit id="exportTables">
+				<source>Tables for Export</source>
+			</trans-unit>
+			<trans-unit id="tt_products_orders">
+				<source>Shop System Orders</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,47 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "This extension offers export tasks for the Scheduler which can be extended by other extensions.",
+        "emConf": {
+            "category": "be",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2.5-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "beta",
+            "targetVersion": "6.2.5-7.6.99",
+            "version": "0.0.1"
+        },
+        "extensionKey": "export",
+        "name": "Export Task",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "jambage.com",
+                "email": "franz@ttproducts.de",
+                "name": "Franz Holzinger",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "JambageCom"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2016-07-09 01:49",
+        "extension_builder_version": "7.6.0",
+        "be_user": " (1)"
+    }
+}

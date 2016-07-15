@@ -1,0 +1,13 @@
+  # cat=basic/enable; type=string; label=Export Path: File path to the place where the exported files will be stored.
+export.path = fileadmin/data/export
+  # cat=basic/enable; type=string; label=System Tables: List of TYPO3 System Tables which are offered to be exported. You must click the checkboxes.
+export.systemtables = pages, tt_content, fe_users
+  # cat=basic/enable; type=string; label=Extension Tables: List of TYPO3 Extension Tables which are offered to be exported. You must click the checkboxes.
+export.extensiontables = tt_news
+
+
+
+
+
+
+
