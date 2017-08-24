@@ -6,7 +6,7 @@ namespace JambageCom\Export\Api;
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2016 Franz Holzinger (franz@ttproducts.de)
+*  (c) 2017 Franz Holzinger (franz@ttproducts.de)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -38,62 +38,62 @@ namespace JambageCom\Export\Api;
 
 class HookApi {
 
-	static public function getHookArray () {
-		$result = array();
+    static public function getHookArray () {
+        $result = array();
 
-				// Hook to handle own checks
-		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][EXPORT_EXT]['hook'])) {
-			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][EXPORT_EXT]['hook'] as $key => $classRef) {
-				$hookObj = \TYPO3\CMS\Core\Utility\GeneralUtility::getUserObj($classRef);
-				if (is_object($hookObj)) {
-					$result[$key] = $hookObj;
-				}
-			}
-		}
+                // Hook to handle own checks
+        if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][EXPORT_EXT]['hook'])) {
+            foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][EXPORT_EXT]['hook'] as $key => $classRef) {
+                $hookObj = \TYPO3\CMS\Core\Utility\GeneralUtility::getUserObj($classRef);
+                if (is_object($hookObj)) {
+                    $result[$key] = $hookObj;
+                }
+            }
+        }
 
-		return $result;
-	}
+        return $result;
+    }
 
 // The hook definition array must have this format:
 //
-// 			$hookDefinitionArray =
-// 			array(
-// 				'ext' => 'export_tt_products',
-// 				'class' => 'JambageCom\\ExportTtProducts\\Api\\ExportApi',
-// 				'tables' => array(
-// 					array(
-// 						'table' => 'sys_products_orders',
-// 						'title' => 'Bestellungen'
-// 					),
-// 					array(
-// 						'table' => 'test',
-// 						'title' => 'Test'
-// 					),
-// 				)
-// 			);
+//     $hookDefinitionArray =
+//     array(
+//         'ext' => 'export_tt_products',
+//         'class' => 'JambageCom\\ExportTtProducts\\Api\\ExportApi',
+//         'tables' => array(
+//             array(
+//                 'table' => 'sys_products_orders',
+//                 'title' => 'Bestellungen'
+//             ),
+//             array(
+//                 'table' => 'test',
+//                 'title' => 'Test'
+//             ),
+//         )
+//     );
 
-	static public function getHookDefinitionArray () {
-		$hookArray = self::getHookArray();
-		$result = array();
+    static public function getHookDefinitionArray () {
+        $hookArray = self::getHookArray();
+        $result = array();
 
-		if (is_array($hookArray)) {
-			foreach ($hookArray as $hookObj) {
-				if (method_exists($hookObj, 'getDefinitionArray')) {
-					$definitionArray = $hookObj->getDefinitionArray();
-					if (
-						isset($definitionArray) &&
-						is_array($definitionArray) &&
-						isset($definitionArray['ext']) &&
-						isset($definitionArray['tables']) &&
-						is_array($definitionArray['tables'])
-					) {
-						$result[] = $definitionArray;
-					}
-				}
-			}
-		}
-		return $result;
-	}
+        if (is_array($hookArray)) {
+            foreach ($hookArray as $hookObj) {
+                if (method_exists($hookObj, 'getDefinitionArray')) {
+                    $definitionArray = $hookObj->getDefinitionArray();
+                    if (
+                        isset($definitionArray) &&
+                        is_array($definitionArray) &&
+                        isset($definitionArray['ext']) &&
+                        isset($definitionArray['tables']) &&
+                        is_array($definitionArray['tables'])
+                    ) {
+                        $result[] = $definitionArray;
+                    }
+                }
+            }
+        }
+        return $result;
+    }
 }
 
 

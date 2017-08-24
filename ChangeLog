@@ -1,4 +1,8 @@
+2017-08-24 Franz Holzinger <franz@ttproducts.de>
+
+    * replace the TABs by blank characters
+    * add a composer.json file
 
 2016-07-15 Franz Holzinger <franz@ttproducts.de>
 
-	* Initial Github upload
+    * Initial Github upload
